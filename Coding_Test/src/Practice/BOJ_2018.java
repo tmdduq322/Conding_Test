@@ -1,6 +1,6 @@
 package Practice;
 import java.util.*;
-public class BoJ_2018 {
+public class BOJ_2018 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
