@@ -1,0 +1,42 @@
+package Practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class BOJ_1182 {
+	static int cnt;
+	static int[] arr;
+	static int N;
+	static int S;
+	static StringBuilder sb = new StringBuilder();
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		S = Integer.parseInt(st.nextToken());
+		arr = new int[N];
+		st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		Bt(0,0);
+		if (S == 0) cnt--;
+		System.out.println(cnt);
+	}
+	
+	public static void Bt(int index, int sum){
+		if (index == N) {
+			if(sum == S) {
+				cnt ++;
+			}
+			return;
+		}
+	    Bt(index + 1, sum + arr[index]);
+	    Bt(index + 1, sum);
+	}
+	
+
+}
